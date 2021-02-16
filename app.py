@@ -18,14 +18,14 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 app.config['JSON_AS_ASCII'] = False
 
 try:
-    mongo = pymongo.MongoClient('mongodb://jobjava:1234@10.250.93.124:27017/')
+    mongo = pymongo.MongoClient('mongodb://username:password@ip:27017/')
     mongo_db = mongo.worksmile
     mongo.server_info()
     print(dtime.today().strftime("%Y/%m/%d %H:%M:%S"), " : app.py >> MongoDB is connected")
 except:
     print(dtime.today().strftime("%Y/%m/%d %H:%M:%S"), " : app.py >> MongoDB is not connected")
 
-HOSTNAME = "onstove-dev-jobjavadb.ch3kdwqk9zub.ap-northeast-1.rds.amazonaws.com"
+HOSTNAME = "mysql hostname"
 USERNAME = "admin"
 PASSWORD = "password"
 app.config["SQLALCHEMY_DATABASE_URI"] = "mysql+pymysql://"+USERNAME+":"+PASSWORD+"@"+HOSTNAME+":3306/worksmile"
